@@ -1,12 +1,14 @@
-function prompt2(text, allowCancel) {
+var prenoms = [], // creation d'un tableau vide
+    prenom;
 
-    if (typeof allowCancel === 'undefined') { // Souvenez-vous de typeof, pour vérifier le type d'une variable
-        allowCancel = false;
-    }
-
-    // Le code… que l'on ne créera pas =p
+while (prenom = prompt("Entrez un prenom: ")) { //boucle while qui va demander d'encoder et enregisrer dans la variable 'prenom'
+    prenoms.push(prenom); // on ajoute chaque insertion dans le tableau 'prenoms'
 }
 
-prompt2('Entrez quelque chose :'); // On exécute la fonction seulement avec le premier argument, pas besoin du deuxième
+if (prenoms.length > 2) { // on va regarder le nombre d'items 
+    alert(prenoms.join(', ')); // affiche les prenoms a la suite
+} else {
+    alert('Il n\'y a pas assez d\'elements dans le tableau');
+}
 
-alert("coucou");
+

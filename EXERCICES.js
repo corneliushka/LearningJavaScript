@@ -148,21 +148,51 @@ var distance = prompt("Quelle est la distance a parcourir ?"),
 var vitesse = calculVitesse(distance, tempsHeure); 
 alert("Votre vitesse est de " +vitesse+ " km/h");
 
+/////
+- Demander un nombre a un user - 
+
+v.1
+
+
+function askNumber () {  // Fonction demandant un nombre a l'utilisateur
+    var string, number; // declaration d'une variable string et number
+    while (true) { // une boucle qui va se repeter tant que l'user ne met pas un nombre correct 
+    string = prompt("Veuillez entrer un nombre"); // est demande au user d'entrer un nombre 
+    number = parseInt(string); // le nombre en "string" insere sera converti en nombre
+        if (!isNaN(number)) { // si c'est bien un nombre, la fonction le retourne avec un return .
+            return number;
+        }
+    }
+}
+alert('Le nombre est ' + askNumber()); // affichage alert avec un string et le return de la fonction askNumber
+
+v.2
+
+function askNumber(){ // Fonction demandant un nombre a l'utilisateur
+    var number; // declaration d'une variable number
+
+    while (isNaN(number)) { // le test isNan est dans un boucle conditionnelle 'while'
+        number = parseInt(prompt('Entrez un nombre entier positif')); // la chaine de caracteres de l'user est converti en nombre et assigne a la variable 'nombre' 
+    }
+
+    return number; // la fonction retourne la variable 'nombre'
+}
+
+alert('Le nombre est ' + askNumber()); // affichage alert avec un string et le return de la fonction askNumber
+
+
 */
 
 
-
 /*  LES BOUCLES
-
+////
 - Simple boucle While - 
-
-
 var note = 1;
 while (note <= 10) {
 	alert("Vous avez la note numero " + note);
 	note++;
 }
-
+////
 - Pair et impair -
 
 var increment = 0;
@@ -222,6 +252,7 @@ while (increment < 100) {
 
 - Pyramide - 
 
+
 V.1
 var star = ['* ', '* * ', '* * * ', '* * * * ', '* * * * * ']
 console.log(star[0]);
@@ -230,6 +261,7 @@ console.log(star[2]);
 console.log(star[3]);
 console.log(star[4]);
 
+
 V.2
 var star = ['* ']
 console.log(star[0].repeat(1));
@@ -237,6 +269,7 @@ console.log(star[0].repeat(2));
 console.log(star[0].repeat(3));
 console.log(star[0].repeat(4));
 console.log(star[0].repeat(5));
+
 
 V.3
 let star = '' ;
@@ -248,6 +281,7 @@ for (i=0;i<5;i++) {
 }
 console.log(star);
 
+
 V.4 (the best, @Pierre-Louis)
 var star = " " 
 for (var b = 0; b < 5; b++) {
@@ -258,7 +292,6 @@ for (var b = 0; b < 5; b++) {
 V.5 (pyramide inversee / pyramide centrale)
 
 */
-
 
 
 /* LES TABLEAUX 
@@ -282,12 +315,66 @@ function somme(a,b) {
 }
 array.reduce(function(a,b))
 
+- Join - 
+
+var cousinsArray = ['','Celui', 'Dont', 'On', 'Ne', 'Prononce', 'Pas', 'Le', 'Nom'];
+var cousinsArray2 = cousinsArray.join(' #');
+alert(cousinsArray2);
+
+- Stocker elements dans tableau + join avec virgule -
+
+var prenoms = [], // creation d'un tableau vide
+    prenom;
+
+while (prenom = prompt("Entrez un prenom: ")) { //boucle while qui va demander d'encoder et enregisrer dans la variable 'prenom'
+    prenoms.push(prenom); // on ajoute chaque insertion dans le tableau 'prenoms'
+}
+
+if (prenoms.length > 2) { // on va regarder le nombre d'items 
+    alert(prenoms.join(', ')); // affiche les prenoms a la suite
+} else {
+    alert('Il n\'y a pas assez d\'elements dans le tableau');
+}
 
 */
 
 
-/*
 
+
+/* OBJETS 
+ 
+- Acces aux objets / Ajout d'item - 
+
+var myObject = {
+    item1: 'Texte 1',
+    item2: 'Texte 2',
+    item3: {
+        paraph1: 'debut',
+        paraph2: 'milieu',
+        paraph3: 'fin'
+    }
+};
+
+//alert(myObject.item3.paraph1); // va afficher 'debut'
+
+//var id = 'item2'; // on met l'identifiant dans une variable
+//alert(myObject[id]); // va afficher 'Texte 2'
+
+//myObject['item4'] = 'Index'; // ajout item
+//alert(myObject.item4); 
+
+
+
+
+
+
+*/
+
+
+
+
+
+/*
 TIPS: 
 
 - HOW TO CONVERT STRING IN NUMBERS WITH PARSING -
