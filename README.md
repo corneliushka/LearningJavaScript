@@ -10,3 +10,4 @@ Repository pour apprendre et pratiquer le JavaScript; repo de reference pour le 
 - **series.js** : pour les exercices concernant les series d'application de JavaScript au HTML ( cf. https://github.com/becodeorg/BXL-Lovelace-3.9/tree/master/parcours/04.1-Javascript )  
 - **sandbox.js** : tester du code et algorithmes.  
 - **style.css** : le style des pages HTML.  
+- **cheatsheet.md** : tout l'export des notes Google Keep (OpenClassRoom + adentums divers) 
