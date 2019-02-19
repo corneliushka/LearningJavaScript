@@ -368,11 +368,164 @@ for (var iter = 0; iter < 4; iter++) {
 
 • La portee des variables de boucle : il est déconseillé de declarer une variable au sein d'une boucle, mais la declarer immediatement dans l'initialisation. Mais une fois que la boucle est initialisee, 
 
-# EN RESUME
+## EN RESUME
 * L'incrémentation est importante au sein des boucles. Incrémenter ou décrémenter signifie ajouter ou soustraire une unité à une variable. Le comportement d'un opérateur d'incrémentation est différent s'il se place avant ou après la variable.
 * La boucle While permet de répéter une liste d'instructions tant que la condition est vérifiée. Si condition "FALSE", la boucle ne s'execute pas. 
 * La boucle do While est une variante de While qui sera exécutée au moins une fois, peu importe la condition.
 * La boucle For est une boucle utilisée pour répéter une liste d'instructions un certain nombre de fois. C'est donc une variante très ciblée de la boucle While, elle s'execute un nombre determinee de fois. 
+
+
+*	*	*	*	*	*	*	*	*	*
+
+# [JavaScript Cheatsheet 2 - #FONCTIONS ]
+
+## LES #FONCTIONS __
+
+L'avantage : reduit considerablement un code long/complexe juste en appelant la fonctione la contenant. 
+
+__Creer sa 1ere fonction__
+
+function myFunction(arguments) {
+    // Le code que la fonction va devoir exécuter
+}
+
+• le mot cle "function" est present a chaque declaration de fonction.
+• vient ensuite le mot cle de la fonction (ex: "myFunction").
+• vient un couple de parantherses dans laquelle on declare des arguments/parameters, elles fournissent les infos a la fonction pour son execution. 
+• vient un couple d'accolades contenant le code que la fonction devra executer (et utilisant les arguments)
+
+=> une fois declaree, la fonction peut etre appellee autant de fois qu'on veut. 
+
+__La portee des variables__
+
+• les variables *Globales* : lorsque une variable est declaree en dehors de la fonction. Pas de probleme, on peut l'appeler dans une fonction.
+• les variables *Locales* : lorsque une variable est declaree a l'interieur d'une fonction. La variable ne pourra pas etre utilisee a l'exterieur et le code ne pourra pas s'executer. Il faut toujours privilegier les variables locales. 
+
+=> Toute variable declaree dans une fonction n'est utilisable que dans cette meme fonction. 
+Dans l'execution d'une fonction, c'est la variable locale qui prend le dessus sur la variable globale.
+Dans l'execution du code general (donc une fois la fonction terminee), c'est la variable globale qui prend ses droits. 
+
+
+__Les arguments__
+
+Selon les fonctions, pas besoin de specifier des arguments. Parfois il y en a un, parfois plusieurs. L'argument qu'on passe dans la fonction peut etre utilise comme variable a l'interieur. 
+
+EX : 
+function myFunction(arg) { // Notre argument est la variable « arg »
+    // Une fois que l'argument a été passé à la fonction, vous allez le retrouver dans la variable « arg »
+    alert('Votre argument : ' + arg);
+}
+myFunction('En voilà un beau test !');
+
+
+//  ici la fonction est declaree attend son execution quand on l'appelle
+// on a l'appel de la fonction a la derniere ligne, en lui passant un argument
+// la fonction va attendre d'avoir tous les arguments avant de s'executer.
+// la fonction prompt () s'execute puis renvoie la valeur de l'user, apres cela myFunction() s'execute (car tous les arguments sont recus) . C'estu ne fonction dite *native*
+
+function myFunction(arg) {
+    alert('Votre argument : ' + arg);
+}
+myFunction(prompt('Que souhaitez-vous passer en argument à la fonction ?'));
+
+
+__Les arguments multiples__ 
+
+// les differents arguments sont separes par une virgule. 
+// a l'execution de la fonction, il n'y a qu'a passer les arguments qu'on veut a notre fonction.
+
+function moar(first, second) {
+    // On peut maintenant utiliser les variables « first » et « second » comme on le souhaite :
+    alert('Votre premier argument : ' + first);
+    alert('Votre deuxième argument : ' + second);
+}
+moar(
+	'Un !',
+	'Deux !'
+);
+
+__Les arguments facultatifs__ (PAS CLAIR)
+
+Si on cree une fonction accueillant un argument mais qu'on ne le specifie pas lors de l'appel, on obtient *undefined* (= indefini). Les arguments facultatifs de'une fonction doit toujours se trouver en derniere position. 
+
+function optional(arg) {
+    alert(arg); // On affiche l'argument non spécifié pour voir ce qu'il contient
+}
+optional();
+
+__Les valeurs de retour__
+
+Essentiellement, les fonctions ne peuvent retourner qu'une seule et unique valeur chacune (hors tableau et objet) ! 
+Pour cela il suffit d'utiliser l'instruction return suivie de la valeur a retourner. 
+Le return met fin a la fonction puis retourne la valeur (le reste ne sera pas execute). Idem si on fait 2 return, le premier mettra fin a la fonction.
+
+EX:
+function sayHello() {
+    return 'Bonjour !'; // L'instruction « return » suivie d'une valeur, cette dernière est donc renvoyée par la fonction
+    alert('Attention ! Le texte arrive !');
+}
+alert(sayHello()); // Ici on affiche la valeur retournée par la fonction sayHello()
+
+
+__Les fonctions anonymes__
+
+Tres important, les fonctions anonymes sont utiles pour les objets, evenements, variables statistiques, closures. 
+Ces fonctions ne possedent pas de nom. 
+
+EX:
+function (arguments) {
+// le code de la fonction anonyme 
+}
+
+Ainsi on peut assigner une fonction anonyme a une variable : 
+
+var sayHello = function() {
+    alert('Bonjour !');
+};
+
+Des lors, on peut appeler notre fonctions par le nom de la variable a laquelle nous l'avons assigne :  sayHello(); 
+
+En JavaScript, il faut distinguer dans le code les structures et les instructions : 
+• STRUCTURES : les fonctions, les conditions, les boucles. (pas besoin de ; )
+• INSTRUCTIONS:  les assignations de variable, l’exécution de fonction, etc. ( ; necessaire)
+
+Les fonctions peuvent servir a isoler une partie du code, pour eviter qu'il n'affecte le reste. 
+// la fonction est isolee entre des parantheses puis est suivie d'une paire () pour y faire appel immediatement et l'executer.
+(function() {
+    // Code isolé
+})() 
+
+=> Ces fonctions immediatement executees s'appellent les "Immediately-Invoked Function Expression" (IIFE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
