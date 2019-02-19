@@ -19,3 +19,10 @@ var ville = document.getElementById("ville");
 object.onclick = myButton() {
     alert("Nom: " +nom+ "\nPrenom: " +prenom+ "\nVille:" +ville);
 }; */
+
+
+/* S2 EX1 */
+/* S2 EX2 */ 
+/* S2 EX3 */ 
+/* S2 EX4 */ 
+/* S2 EX5 */ 
