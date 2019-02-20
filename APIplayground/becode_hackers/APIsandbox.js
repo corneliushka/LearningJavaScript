@@ -12,7 +12,7 @@ request.onload = function () { // fonction de la requete
   var data = JSON.parse(this.response); 
 
   if (request.status >= 200 && request.status < 400) { // reauete vers le serveur reussie 
-    data.forEach(perso => {
+    data.forEach(this.reponse => {
       const card = document.createElement('div');
       // card.setAttribute('card')
       const history = document.createElement('p');
