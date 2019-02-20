@@ -2,6 +2,14 @@
 
 Repository pour apprendre et pratiquer le JavaScript; repo de reference pour le parcours de JavaScript BeCode Lovelace3.9 : https://github.com/becodeorg/BXL-Lovelace-3.9/tree/master/parcours/04.1-Javascript  
 
+# Folders 
+
+## API Playground
+Repo pour apprendre et pratiquer les API (in progress) . 
+
+## SeriesJS 
+Repo pour les series du parcours JS BeCode : https://github.com/becodeorg/BXL-Lovelace-3.9/tree/master/parcours/04.1-Javascript 
+
 # Nomination des fichiers et buts : 
 
 - **index.html** : La page d'accueil du training JavaScript.  
@@ -11,3 +19,4 @@ Repository pour apprendre et pratiquer le JavaScript; repo de reference pour le 
 - **sandbox.js** : tester du code et algorithmes.  
 - **style.css** : le style des pages HTML.  
 - **cheatsheet.md** : https://github.com/corneliushka/LearningJavaScript/blob/developpementMain/cheatsheet.md tout l'export des notes Google Keep (OpenClassRoom + adentums divers) 
+
