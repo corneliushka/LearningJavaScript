@@ -4,10 +4,10 @@ Repository pour apprendre et pratiquer le JavaScript; repo de reference pour le 
 
 # Folders 
 
-## API Playground
+## 1. API Playground
 Repo pour apprendre et pratiquer les API (in progress) . 
 
-## SeriesJS 
+## 2. SeriesJS 
 Repo pour les series du parcours JS BeCode : https://github.com/becodeorg/BXL-Lovelace-3.9/tree/master/parcours/04.1-Javascript 
 
 # Nomination des fichiers et buts : 
