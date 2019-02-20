@@ -13,13 +13,13 @@ request.onload = function () { // fonction de la requete
 
   if (request.status >= 200 && request.status < 400) { // reauete vers le serveur reussie 
     data.forEach(this.reponse => {
-      const card = document.createElement('div');
+      let card = document.createElement('div');
       // card.setAttribute('card')
-      const history = document.createElement('p');
-      const img = document.createElement('img');
-      const profile = document.createElement('h2');
+      let history = document.createElement('p');
+      let img = document.createElement('img');
+      let profile = document.createElement('h2');
       // h2.textContent = perso.profile;
-      const wikiLink = document.createElement('a');
+      let wikiLink = document.createElement('a');
 
       console.log();
     });
