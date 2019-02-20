@@ -1,0 +1,29 @@
+/* Espace de travail Exercice 1 sur JavaScript */
+body {
+    width: 400px;
+    border: 2px solid red;
+    border-radius: 20px;
+    margin: 5px auto;
+    min-width: 300px;
+
+}
+
+.block {
+    text-align: center;
+    border: 3px dotted blue;
+    border-radius: 5%; 
+    padding: 10px;
+    margin: 10px;
+}
+
+
+h1 {
+    padding: 10px;
+    font-size: 3vw;
+}
+
+p {
+    padding: 10px;
+    font-size: 2vw;
+
+}
