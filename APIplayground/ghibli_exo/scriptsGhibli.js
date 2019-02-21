@@ -2,7 +2,6 @@
 // RETRIEVING THE DATA WITH AN HTTP REQUEST
 var request = new XMLHttpRequest();                                 // 1. creation d'une variable de requete et lui affecter le XMLHttpREquest
 request.open('GET', 'https://ghibliapi.herokuapp.com/films', true); // 2. ouvrir une nouvelle connexion, utiliser la requete GET sur l'url pour extraire les data
-
 request.onload = function () {            // 3. notre fonction qui fera la requete
     
     if (request.status >= 200 && request.status < 400) { // 8. On imbrique tout dans une condition IF de statut requete HTTP

@@ -1,4 +1,32 @@
-#root {
+.div {
+
+}
+
+.container {
+  
+}
+
+p {
+
+}
+
+h2 {
+
+}
+
+.card {
+
+}
+
+a {
+
+}
+
+img {
+
+}
+
+/* #root {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -23,7 +51,7 @@
     .card {
       flex: 1 1 calc(33% - 2rem);
     }
-  }
+  } */
 
 
 
