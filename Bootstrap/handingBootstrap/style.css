@@ -38,4 +38,7 @@ body {
     border-radius: 5px;
 }
 
-container-barre2-exo
+.borderr {
+    border: 1px solid black;
+}
+

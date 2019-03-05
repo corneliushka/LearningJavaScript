@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Exercice_4</title>
+        <title>S1E4</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
     </head>
     <body>
-        <form id="form" name="theform">
+        <h1>Serie 1 - Exercice 4</h1>
+        <p>Entrez votre nom, prenom, ville et cliquez sur le bouton "Submit" pour recevoir les resultats</p>
+        <form id="form" name="theForm">
             <label for="nom">Nom : </label><input type="text" name="nom" id="nom"/>
             <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom"/>
             <label for="ville">Ville : </label><input type="text" name="ville" id="ville"/>
-            <button  name="valider" id="valider">Valider</button>
+            <input type="submit" value="Envoyer le formulaire">
         </form>
     </body>
     <script>
         function submitById() {
-            let nom = document.getElementById('nom');
-            let prenom = document.getElementById('prenom');
-            let ville = document.getElementById('ville');
-            if (document.getElementsByClassName("load")) {
-                document.getElementById("valider").submit;
-                alert("Nom : " + nom + "\nPrenom : " + prenom + "\nVille : " + ville); 
-            }
+        let nom = document.querySelector('nom').value;
+        let prenom = document.querySelector('prenom').value;
+        let ville = document.querySelector('ville').value;
+
+
+        alert("Votre nom : " + nom + "\nVotre prenom : " + prenom + "\nVotre ville : " + ville);
         }
+/*         document.querySelector("#form").addEventListener("submit", formSubmit);
+ */
     </script>
 </html>
