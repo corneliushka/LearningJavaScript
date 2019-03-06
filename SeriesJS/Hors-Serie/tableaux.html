@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exercices Tableaux</title>
+    </head>
+    <body>
+        <h2>Exercice - Addition :</h2>
+        <div id="addition1"></div>
+        <div id="addition2"></div>
+
+        <h2>Exercice - Vos meilleurs Choix :</h2>
+        <div id="choix"></div>
+
+        <h2>Exercice - Clone :</h2>
+        <div id="clone"></div>
+        
+        <script>
+            
+            /EXO ADDITION//////////////////
+            // Premiere Variante classique
+            let arrayNombre = [1,2,3,4,5,6,7,8,9];
+            let sommeVariante1 = 0;
+            for (i=0; i<arrayNombre.length; i++) {
+                sommeVariante1 += parseInt(arrayNombre[i]);
+            }
+            
+            document.getElementById("addition1").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de boucle For : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante1 + "</p>";
+
+            // Seconde Variante avec methode array reduce
+            let arrayNombre2 = [1,2,3,4,5,6,7,8,9];
+            let sommeVariante2 = 0;
+            function getSum (total, num) {
+                return total + num;
+            }
+            function myFunction () {
+                sommeVariante2 = arrayNombre2.reduce(getSum);
+            }
+            myFunction();
+            
+            document.getElementById("addition2").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de array reduce + fonctions : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante2 + "</p>";
+
+
+            /EXO VOS MEILLEURS CHOIX///////
+            let arrayOrdre = [["Le premier", "Le deuxieme", "Le troisieme"],["Tom Hanks", "Di Caprio", "Michael Caine"]];
+
+            premier = "- " + arrayOrdre[0][0] + " est " + arrayOrdre[1][0] + "<br>";
+            deuxieme = "- " + arrayOrdre[0][1] + " est " + arrayOrdre[1][1] + "<br>";
+            troisieme = "- " + arrayOrdre[0][2] + " est " + arrayOrdre[1][2];
+
+            document.getElementById("choix").innerHTML = "<p>" + "Dans mon top 3 du meilleur choix des acteurs : " + "<br>"
+            + premier + deuxieme + troisieme + "</p>";
+
+            /EXO Exercice : clone//////////
+
+
+        </script>
+    </body>
+</html>

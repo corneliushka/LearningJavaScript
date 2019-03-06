@@ -5,17 +5,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+                .affichage {
+                    border: 1px solid blue;
+                }
+        </style>
     </head>
     <body>
         <h1>Serie 1 - Exercice 5</h1>
         <p>Demander à l’utilisateur deux nombres à virgule. Ne garder que la partie entière du premier. Les multiplier et afficher le résultat dans une boîte de dialogue.</p>
+        <form>
+            <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
+            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
+            <button onclick="form" id="valider" name ="valider">Valider</button>
+
+            <div id="affichage" class="affichage"></div>
+        </form>
     </body>
     <script>
-        const array = [];
-        for (var iter = 0; iter < 2; iter++) {
-        let nombre = prompt("Donnez deux nombres a virgule svp.");
-        array.push(nombre);
+        let array = [];
+
+        function form() {
+            let nombre1 = Math.round(document.getElementById(premier_nombre)).data;
+            console.log(nombre1);
+            let nombre2 = parseFloat(document.getElementById(deuxieme_nombre).data);
+            console.log(nombre2);
+            document.getElementById("affichage").innerHTML = nombre1 + nombre2;
         }
-        console.log(array);
+        submit.onclick = function() {alert("Button pressed!");}
     </script>
 </html>
