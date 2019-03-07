@@ -15,6 +15,7 @@
         <div id="choix"></div>
 
         <h2>Exercice - Clone :</h2>
+        <div id="original"></div>
         <div id="clone"></div>
 
         <script>
@@ -26,8 +27,7 @@
             for (i=0; i<arrayNombre.length; i++) {
                 sommeVariante1 += parseInt(arrayNombre[i]);
             }
-            
-            document.getElementById("addition1").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de boucle For : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante1 + "</p>";
+                document.getElementById("addition1").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de boucle For : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante1 + "</p>";
 
             // Seconde Variante avec methode array reduce
             let arrayNombre2 = [1,2,3,4,5,6,7,8,9];
@@ -39,24 +39,26 @@
                 sommeVariante2 = arrayNombre2.reduce(getSum);
             }
             myFunction();
-            
-            document.getElementById("addition2").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de array reduce + fonctions : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante2 + "</p>";
+                document.getElementById("addition2").innerHTML = "<p>" + "Le tableau avec les chiffres a additionner, pour la variante de array reduce + fonctions : [1,2,3,4,5,6,7,8,9] , et leur somme vaut " + sommeVariante2 + "</p>";
 
 
             /EXO VOS MEILLEURS CHOIX///////
             let arrayOrdre = [["Le premier", "Le deuxieme", "Le troisieme"],["Tom Hanks", "Di Caprio", "Michael Caine"]];
-
             premier = "- " + arrayOrdre[0][0] + " est " + arrayOrdre[1][0] + "<br>";
             deuxieme = "- " + arrayOrdre[0][1] + " est " + arrayOrdre[1][1] + "<br>";
             troisieme = "- " + arrayOrdre[0][2] + " est " + arrayOrdre[1][2];
-
             document.getElementById("choix").innerHTML = "<p>" + "Dans mon top 3 du meilleur choix des acteurs : " + "<br>"
             + premier + deuxieme + troisieme + "</p>";
 
             /EXO CLONE//////////
-            
+            let arrayOriginal = ["Mario", "Luigi", "Peach"];
+            document.getElementById("original").innerHTML = "<p>" + "Premier tableau : [" + arrayOriginal + "] </p>";
 
-
+            //clonage : 
+            let arrayClone = arrayOriginal.slice(0);
+            arrayClone.push("Bowser");
+            console.log(arrayClone);
+            document.getElementById("clone").innerHTML = "<p>" + "Deuxieme tableau : [" + arrayClone + "] </p>";
         </script>
     </body>
 </html>

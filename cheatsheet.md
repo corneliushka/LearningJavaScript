@@ -11,7 +11,7 @@ JavaScript est un langage dit de "client-side", cad que les scripts sont execute
 var number = 0;
 var output = number++;
 
-alert(number); // Affiche : « 1 »
+alert(number); // Affiche : « 1 » 
 alert(output); // Affiche : « 0 »
 Schema suivant : 
 • le visiteur-client demande une page au serveur,  
@@ -269,7 +269,7 @@ switch (drawer) {
 /!\ Si on attend un chiffre dans le prompt, ne pas oublier de l'encadrer dans une fonction parseInt( ) afin de convertir le type de valeur, de string en nombre (pas necessaire si on specifie le string lors des case (ex: case '1' : ).
 
 __Les ternaires__
-L'operateur (ternaire) conditionnel de JavaScript comporte trois operandes et est utilise comme raccourci pour la declaration des instructions If...Else. Il se decompose comme suit :
+L'operateur (ternaire) conditionnel de JavaScript comporte trois operandes et est a utiliser comme raccourci pour la declaration des instructions If...Else. Il se decompose comme suit :
 - nom de la variable qui va accueillir le resultat de la ternaire,
 - la variable qui sera analysee par la ternaire,
 - un " ? " suivi d'une valeur (nombre, texte),
