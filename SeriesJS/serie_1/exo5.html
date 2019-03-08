@@ -13,25 +13,32 @@
     </head>
     <body>
         <h1>Serie 1 - Exercice 5</h1>
-        <p>Demander à l’utilisateur deux nombres à virgule. Ne garder que la partie entière du premier. Les multiplier et afficher le résultat dans une boîte de dialogue.</p>
-        <form>
-            <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
-            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
-            <button onclick="form" id="valider" name ="valider">Valider</button>
-
-            <div id="affichage" class="affichage"></div>
+        <form onsubmit="nombres()">
+            <p>Demander à l’utilisateur deux nombres à virgule. Ne garder que la partie entière du premier. Les multiplier et afficher le résultat dans une boîte de dialogue.</p>
+            <label for="premier_nombre">Premier nombre : </label><input type="number" id="premier_nombre" name="premier_nombre"/><br/>
+            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="number" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
+            <input type="submit" value="submit">
         </form>
-    </body>
-    <script>
-        let array = [];
+        <div id="affichage" class="affichage"></div>
 
-        function form() {
-            let nombre1 = Math.round(document.getElementById(premier_nombre)).data;
-            console.log(nombre1);
-            let nombre2 = parseFloat(document.getElementById(deuxieme_nombre).data);
-            console.log(nombre2);
-            document.getElementById("affichage").innerHTML = nombre1 + nombre2;
-        }
-        submit.onclick = function() {alert("Button pressed!");}
-    </script>
+        <script>
+            let array = [];
+
+            function nombres() {
+                // premier nombre
+                let nombre1 = parseInt(document.getElementById(premier_nombre).value);
+                console.log(nombre1);
+                array.push(nombre1);
+                
+                // deuxieme nombre
+                let nombre2 = parseInt(document.getElementById(deuxieme_nombre).value);
+                console.log(nombre2);
+                array.push(nombre2);
+            }
+            
+/*             document.getElementById("affichage").innerHTML = "<p>" + "Le premier numero : " + nombre1 + "<br>" + "Le second numero : " + nombre2;
+ */
+            </script>
+    </body>
+
 </html>

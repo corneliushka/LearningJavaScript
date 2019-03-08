@@ -47,8 +47,8 @@ EX:                                          var myVariable = 5.5;
 
 -  Il est possible de declarer plusieurs variables a la suivre avec 1 seul mot cle "var", il suffit alors de mettre une virgule (,) apres l'affectation de chacune et finir par le point virgule (;). EX:
 var	 maVariableAlpha = 2,	
-	 maVariableBeta = maVariableAlpha + 3,
-	 maVariableGamma = maVariableAlpha + maVariableBeta;
+	maVariableBeta = maVariableAlpha + 3,
+	maVariableGamma = maVariableAlpha + maVariableBeta;
 
 __Types de variables__ 
 
