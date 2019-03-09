@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercices sur Math Object</title>
+    <style>
+        .bg {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Exercice Minimum et Maximum</h1>
+    <p>La valeur est égal au chiffre le plus petit dans l'ensemble suivant : 7, 5, -12, 6, 32, 18, 14, -2</p>
+    <p>La valeur est égal au chiffre le plus grand dans l'ensemble suivant : -3, 9, 21, 36, 27, 54, 17, 35</p>
+    <p>La valeur est égal a l'addition des deux précédentes variables</p>
+    <div class="bg" id="minmax1"></div>
+    <div class="bg" id="minmax2"></div>
+    <div class="bg" id="minmax3"></div>
+
+    <h1>Exercice : Aleatoire 1</h1>
+    <p>Faire une variable floatBateau dont la valeur est 10.4</p>
+    <p>Faire une variable couleBateau dont la valeur est floatBateau arrondie vers le bas</p>
+    <p>Faire une variable voleBateau dont la valeur est floatBateau arrondie vers le haut</p>
+    <div class="bg" id="exo1"></div>
+    
+    <h1>Exercice : Aleatoire 2</h1>
+    <p>Déclarez les variables suivantes :</p>
+    <p>La valeur aléatoire entre 50 et 100</p>
+    <p>La valeur aléatoire peut être seulement 0 ou 1</p>
+    <p>La valeur aléatoire peut aller de 0 à 10 inclus</p>
+    <div class="bg" id="exo2"></div>
+
+    <h1>Exercice : Aleatoire 3</h1>
+    <p>Créer un tableau qui contetient les valeurs suivantes : Goro, Johnny Cago, Kano, Liu Kano, Raiden, Reptil, Scorpion, Shang Tsun, Sonya, Sub-Zero. 
+    <br> 
+    Choisir un personnage aléatoirement dans le tableau</p>
+    <div class="bg" id="exo3"></div>
+
+    <script>
+        //EX0
+        var arrayEnsemble1 = [7, 5, -12, 6, 32, 18, 14, -2];
+        var chiffreMatch1 = Math.min(arrayEnsemble1[0]);
+        document.getElementById('minmax1').innerHTML = "<p>" + "Ensemble : " + arrayEnsemble1 + "<br>" + "Chiffre : " + chiffreMatch1 + "</p>";
+        var arrayEnsemble2 = [-3, 9, 21, 36, 27, 54, 17, 35];
+        var chiffreMatch2 = Math.max(arrayEnsemble2[0]);
+        document.getElementById('minmax2').innerHTML = "<p>" + "Ensemble : " + arrayEnsemble2 + "<br>" + "Chiffre : " + chiffreMatch2 + "</p>";
+        var chiffresMatchSum = chiffreMatch1 + chiffreMatch2;
+        document.getElementById('minmax3').innerHTML = "<p>" 
+                                                        + "Somme des deux precedentes variables : " 
+                                                        + chiffresMatchSum + "</p>";
+                                                        
+        //EX1 
+        var floatBateau = 10.4;
+        var couleBateau = Math.floor(floatBateau);
+        var voleBateau = Math.ceil(floatBateau);
+        document.getElementById('exo1').innerHTML = "<p>" + "Le bateau est stable : " + floatBateau + "<br>" 
+                                                            + "Le bateau coule : " + couleBateau + "<br>"
+                                                            + "Le bateau vole : " + voleBateau + "</p>";
+                                                            
+        //EX2
+        var aleatoire = Math.floor(Math.random() * 50) + 50;
+        var aleatoireBinaire = Math.round(Math.random());
+        var aleatoire0to10 = Math.round(Math.random() * 10);
+        document.getElementById('exo2').innerHTML = "<p>" 
+                                                    + "Nombre random entre 50 et 100 est : " + aleatoire + "<br>" 
+                                                    + "Chiffre random entre 0 et 1 : " + aleatoireBinaire + "<br>"
+                                                    + "Chiffre random entre 0 et 10 inclus : " + aleatoire0to10 + 
+                                                    "</p>";
+                                                    
+        //EX3
+        var arrayMortalCombatChar = ["Goro", "Johnny Cago", "Kano", "Liu Kano", "Raiden", "Reptil", "Scorpion", "Shang Tsun", "Sonya", "Sub-Zero"];
+        var randomChar = arrayMortalCombatChar[Math.floor(Math.random()*arrayMortalCombatChar.length)];
+        document.getElementById('exo3').innerHTML = "<p>" + "Available Characters : " + arrayMortalCombatChar + "<br>" 
+                                                    + "Random Character : " + randomChar + "</p>";
+                                                    
+    </script>
+</body>
+</html>    <div class="bg" id="min&max1"></div>

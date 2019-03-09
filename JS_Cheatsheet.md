@@ -102,6 +102,8 @@ Si l'instruction nous renvoie "undefined", c'est que soit la variable est inexis
 
 #### 1.2.1.3. Les operateurs arithmetiques
 
+[Premiers en math dans JavaScript (MDN)](https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps/Math)
+
 addition : +
 soustraction : -
 multiplication : *
@@ -115,6 +117,11 @@ EX:
     alert(number); // Affiche : « 8 »
 
 /!\ Lorsqu'on fait une operation arithmetique entre un string et un number (ex: "Salut les gens" * 4), on obtient un NaN ( = Not a Number) pour nous prevenir que cela ne donne rien.  
+
+addition et assignation : += // Ajoute la valeur de droite à la valeur de la variable de gauche, puis renvoie la nouvelle valeur de la variable
+soustraction et assignation : -= // Soustrait la valeur de droite à la valeur de la variable de gauche, puis renvoie la nouvelle valeur de la variable  
+multiplication et assignation : *= // Multiplie la valeur de droite par la valeur de la variable de gauche, puis renvoie la nouvelle valeur de la variable  
+division et assignation : /= // Divise la valeur de la variable de gauche par la valeur de droite, puis renvoie la nouvelle valeur de la variable  
 
 #### 1.2.1.4. Concatenation et conversion des types
 
@@ -496,9 +503,9 @@ Tres important, les fonctions anonymes sont utiles pour les objets, evenements, 
 Ces fonctions ne possedent pas de nom.  
 
 EX:
-function (arguments) {
-// le code de la fonction anonyme  
-}
+    function (arguments) {
+    // le code de la fonction anonyme  
+    }
 
 Ainsi on peut assigner une fonction anonyme a une variable :  
 
@@ -509,13 +516,53 @@ var sayHello = function() {
 Des lors, on peut appeler notre fonctions par le nom de la variable a laquelle nous l'avons assigne :  sayHello();  
 
 En JavaScript, il faut distinguer dans le code les structures et les instructions :  
-• STRUCTURES : les fonctions, les conditions, les boucles. (pas besoin de ; )
-• INSTRUCTIONS:  les assignations de variable, l’exécution de fonction, etc. ( ; necessaire)
+• STRUCTURES : les fonctions, les conditions, les boucles. (pas besoin de ; )  
+• INSTRUCTIONS:  les assignations de variable, l’exécution de fonction, etc. ( ; necessaire)  
 
 Les fonctions peuvent servir a isoler une partie du code, pour eviter qu'il n'affecte le reste.  
 // la fonction est isolee entre des parantheses puis est suivie d'une paire () pour y faire appel immediatement et l'executer.
-(function() {
-    // Code isolé
-})()  
+    (function() {
+        // Code isolé
+    })()  
 
 => Ces fonctions immediatement executees s'appellent les "Immediately-Invoked Function Expression" (IIFE)
+
+## 1.4 Quelques Methodes essentielles  
+
+### 1.4.1 Maths Object
+
+L'objet Math est un objet natif dont les méthodes et propriétés permettent l'utilisation de constantes et fonctions mathématiques. Cet objet n'est pas une fonction.
+
+Description Contrairement aux autres objets globaux, Math n'est pas un constructeur. Toutes les propriétés et les méthodes de Math sont statiques.
+
+Pour accéder à la constante PI, on utilise Math.PI. Pour accéder à la fonction sinus, on utilise Math.sin(x) où x est l'argument de cette méthode.
+
+Les constantes sont définies avec la précision des nombres réels en JavaScript.
+
+EX Syntaxe :  
+    var x = Math.PI;            // Returns PI
+    var y = Math.sqrt(16);      // Returns the square root of 16
+
+#### Description de la methode  
+
+Math.ceil(x) //Returns the value of x rounded up to its nearest integer
+Math.floor(x) //Returns the value of x rounded down to its nearest integer
+Math.max(x, y, z, ...) //Returns the number with the highest value
+Math.min(x, y, z, ...) //Returns the number with the lowest value
+Math.random() //Returns a random number between 0 and 1
+Math.round(x) //Returns the value of x rounded to its nearest integer
+
+EX:  
+    *var nombreAleatoire = Math.floor(Math.random() * range//nbreMax-nbreMin) + restantNbreMax-ou-nbreMin*  
+    var nombreAleatoire = Math.floor(Math.random() * 28) + 1991; // donne une annee entre 1991 et 2019  
+EX:
+    // autre methode par fonction :
+    function getRandomInt (min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
+EX:
+    // pour avoir un nombre aleatoire entre 0 et 1 (true-false), on peut utiliser  
+    Math.round(Math.random())
+
+#### Transformation  
+
+parseFloat // Va parser un string ou valeur et transformer en nombre decimal.  
+parseInt  // Va parser un string ou valeur et transformer en nombre (integer).

@@ -15,29 +15,30 @@
         <h1>Serie 1 - Exercice 5</h1>
         <form onsubmit="nombres()">
             <p>Demander à l’utilisateur deux nombres à virgule. Ne garder que la partie entière du premier. Les multiplier et afficher le résultat dans une boîte de dialogue.</p>
-            <label for="premier_nombre">Premier nombre : </label><input type="number" id="premier_nombre" name="premier_nombre"/><br/>
-            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="number" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
+            <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
+            <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
             <input type="submit" value="submit">
         </form>
         <div id="affichage" class="affichage"></div>
 
         <script>
             let array = [];
-
+            let nombre1 = 0;
+            let nombre2 = 0;
             function nombres() {
                 // premier nombre
-                let nombre1 = parseInt(document.getElementById(premier_nombre).value);
+                nombre1 = (document.getElementById(premier_nombre).value);
                 console.log(nombre1);
                 array.push(nombre1);
                 
                 // deuxieme nombre
-                let nombre2 = parseInt(document.getElementById(deuxieme_nombre).value);
+                nombre2 = (document.getElementById(deuxieme_nombre).value);
                 console.log(nombre2);
                 array.push(nombre2);
             }
             
-/*             document.getElementById("affichage").innerHTML = "<p>" + "Le premier numero : " + nombre1 + "<br>" + "Le second numero : " + nombre2;
- */
+            document.getElementById("affichage").innerHTML = "<p>" + "Tableau : " + array + "<br>" + "Le premier numero : " + nombre1 + "<br>" + "Le second numero : " + nombre2;
+            nombres();
             </script>
     </body>
 
