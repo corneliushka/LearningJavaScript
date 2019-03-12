@@ -1,4 +1,8 @@
+
 # 1. JAVASCRIPT CHEATSHEET v.-0.1 - 08/03/19
+
+(autres Cheatsheet)
+[VueJS_Cheatsheet](empty)
 
 (export de Google Keep)
 (remember to insert TOC)  
@@ -48,12 +52,12 @@ Schema suivant :
 
 - La fonction est composee de deux choses, son nom suivi d'un couple de parantheses (ouvrante et fermante), EX : myFunction().
 
-- Le code JavaScript est insere dans la page HTML au moyen de l'element <script>, qui contient un attribut "type" servant a indiquer le type de langage que l'on va utiliser.
+- Le code JavaScript est insere dans la page HTML au moyen de l'element *script*, qui contient un attribut "type" servant a indiquer le type de langage que l'on va utiliser.
 
-- Le JavaScript externe : il est conseille d'ecrire le code JavaScript dans un fichier externe, portant l'extension ".js", il est ensuite appelle depuis la page Web au moyen de l'element <script> et de son attribut src=" " qui contient l'URL du fichier _.js .  
-EX: <script src="hello.js"></script>
+- Le JavaScript externe : il est conseille d'ecrire le code JavaScript dans un fichier externe, portant l'extension ".js", il est ensuite appelle depuis la page Web au moyen de l'element *script* et de son attribut src=" " qui contient l'URL du fichier _.js .  
+EX: *<&script src="hello.js"><&/script>*
 
-- Une page web est lue par le navigateur de facon lineaire, d'abord le <head> puis les elements du <body>. Une bonne pratique pour accellerer le chargement de la page est de mettre les elements <script> juste avant la fermeture de l'element <body>, afin d'etre charge en dernier.
+- Une page web est lue par le navigateur de facon lineaire, d'abord le *head* puis les elements a l'interieur du *body*. Une bonne pratique pour accellerer le chargement de la page est de mettre les elements *script* juste avant la fermeture de l'element *body*, afin d'etre charge en dernier.
 
 ## 1.2. LES #VARIABLES et LES BOUCLES
 
@@ -458,7 +462,7 @@ function myFunction(arg) {
 }
 myFunction(prompt('Que souhaitez-vous passer en argument à la fonction ?'));
 
-####  1.3.1.4. Les arguments multiples
+#### 1.3.1.4. Les arguments multiples
 
 // les differents arguments sont separes par une virgule.  
 // a l'execution de la fonction, il n'y a qu'a passer les arguments qu'on veut a notre fonction.
@@ -566,3 +570,22 @@ EX:
 
 parseFloat // Va parser un string ou valeur et transformer en nombre decimal.  
 parseInt  // Va parser un string ou valeur et transformer en nombre (integer).
+
+## 1.5 Document Object Model  
+
+### 1.5.1 Interface DOMTokenList  
+
+[DOMTokenList](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList)
+
+
+event.target : https://developer.mozilla.org/fr/docs/Web/API/Event/target
+
+#### Element.classList
+
+L'[Element.classList](https://developer.mozilla.org/fr/docs/Web/API/Element/classList) permet d'acceder a la liste des classes d'un element, comme avec une chaine delimitee par des espace avec la propriete element.className.
+
+Methodes :
+
+- Element.classList.add("") : Ajoute les classes spécifiées.  
+- Element.classList.remove("") : Supprime les classes spécifiées.
+- Element.classList.toggle("") : Si un seul argument est présent : change l'existence d'une classe dans la liste. Si la classe existe, alors la supprime et renvoie *false*, dans le cas inverse, ajoute cette classe et retourne *true*.
