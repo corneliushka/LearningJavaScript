@@ -34,11 +34,19 @@ Pour utiliser un pre-processeur (type SASS) avec Vue, on peut voir du cote de [v
 
 On a 3 fichiers : le HTML, le CSS, le JS.
 
+
+##### Initialiser un Nouveau projet 
+
+1) Se positionner dans un repertoire (clone de GitHub ou qui sera initialise sur GitHub plus tard).
+2) Dans le terminal :~$ vue create nomduprojet
+3) les fichiers de dependances sont generes dans le repertoire, avec le src ou se trouve main.js et App.vue
+4) Avec le terminal aller dans le folder du projet et lancer :~$ npm run serve
+
 ##### Sous le JS
 
 On declare l'app Vue, :
 
-- *el* va cibler un identifiant du HTML  
+- *el* va cibler un element dans le html avec in ID, sur lequel on greffera vue.js
 - *data* sera un objet contenant des definitions (comme dans .js) avec des valeurs. Ces valeurs changees dans le vont s'adapter sur la page dynamiquement.
 
 var app = new Vue({  
@@ -54,9 +62,19 @@ Ainsi on peut aussi reatribuer autre chose a l'objet tel que :
 
 ##### Conditionnelles et Boucles (dans le HTML) 
 
+###### []()
+
 - v-if : attribut "directive", cad que *v* suivi de *-* signifie que c'est un attribut special de Vue. La declaration d'une propriete de l'attribut veut dire que la div/span est affichee si la propriete est evaluee comme vraie.  
 C'est une forme de conditionnelle sur Vue.js.  
 
+###### [Rendu de liste](https://fr.vuejs.org/v2/guide/list.html)
+
 - v-for : autre attribut, permettant de simuler une boucle for et ainsi d'ajouter des elements. Comme pour une to-do liste.  
+
+
+            <li v-for="(stuff, index) in todos" :key="index">
+                {{ stuff.text }}
+            </li>
+
 
 - v-on : permettre aux utilisateurs d'interagir avec l'app Vue.
