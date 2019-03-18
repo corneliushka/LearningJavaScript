@@ -11,7 +11,7 @@ Formatage v.-0.1:
 
 [x] Variables et boucles  
 [x] Fonctions  
-[] Tableaux et Objets  
+[] WIP... Tableaux et Objets  
 [] Manipulation HTML et DOM  
 
 Sources :  
