@@ -499,6 +499,7 @@ EX:
     }
     alert(sayHello()); // Ici on affiche la valeur retournée par la fonction sayHello()
 
+
 ### 1.3.2. L'invocation des fonctions (et manieres de faire des fonctions)
 
 #### 1.3.2.1. Les fonctions anonymes
@@ -565,6 +566,19 @@ EX:
 EX:
     // pour avoir un nombre aleatoire entre 0 et 1 (true-false), on peut utiliser  
     Math.round(Math.random())
+
+
+### 1.4.2 [Méthodes de String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) 
+
+- maVariable.length ; permet de connaitre le nombre de caractères dans le string assigné à la variable.
+- maVariable.toUpperCase() ; mettre le contenu de la variable (chaine de caracteres) en lettres capitales.
+- maVariable.toLowerCase() ; mettre le contenu de la variable (chaine de caracteres) en lettes minuscules.
+- maChaine.indexOf("any string") ; va renvoyer la position dans laquelle la chaine est trouvée (si elle existe). Si cela n'existe pas, on peut mettre une condition qui est égale à -1, comme par exemple : 
+    if(maChaine.indexOf("ABCD") == -1) alert("ce mot n'existe pas");
+- méthode slide() permet d'extraire une section de la chaine des caractères et la renvoyer, comme par exemple : 
+    var phrase = "La méthode slice() extrait une section de la chaine de caractères."
+    phrase.slice(3, 10); 
+
 
 #### Transformation  
 
