@@ -1,5 +1,5 @@
 
-# 1. JAVASCRIPT CHEATSHEET v.-0.1 - 08/03/19
+# 1. JAVASCRIPT CHEATSHEET v.-0.1 - 12/04/19
 
 (autres Cheatsheet)
 [VueJS_Cheatsheet](empty)
@@ -75,6 +75,8 @@ EX:
         maVariableBeta = maVariableAlpha + 3,  
         maVariableGamma = maVariableAlpha + maVariableBeta;  
 
+
+
 ### 1.2.1. Manipulation des variables
 
 #### 1.2.1.1. Types de variables
@@ -86,8 +88,7 @@ On peut l'assigner de deux facons, avec des guillemets " "; ou avec des apostrop
 Lorsqu'on met une variable nombre en string, elle devient un chaine de caracteres et non plus un string.  
 Si on veut mettre inserer des apostrophes ou guillemets dans le texte pour encadrer, alors inserer \" ou \' pour faire signifier au moteur JavaScript cela.  
 (EX: var text = 'Ça c\'est quelque chose !'; )
-
-• Les booleens (alias *boolean*) : un type bien particulier qui n'aura que deux etats : vrai ou faux (true / false).  
+ 
 
 #### 1.2.1.2. Tester l'existence de variables avec **typeof**  
 
@@ -104,15 +105,15 @@ alert(typeof aBoolean); // Affiche : « boolean »
 
 Si l'instruction nous renvoie "undefined", c'est que soit la variable est inexistante, soit qu'elle est declaree mais ne contient rien.  
 
-#### 1.2.1.3. Les operateurs arithmetiques
+#### 1.2.1.3. Les opérateurs arithmetiques
 
 [Premiers en math dans JavaScript (MDN)](https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps/Math)
 
-addition : +
-soustraction : -
-multiplication : *
-division : /
-modulo : % . Ce dernier operateur est simplement le reste d'une division.  
+- addition : +
+- soustraction : -
+- multiplication : *
+- division : /
+- modulo : % . Ce dernier opérateur est simplement le reste d'une division. EX: 10 % 3 = 1.
 
 Pour faire une operation a une variable deja affectee, on peut utiliser +=, -=, *=, /= ou %= ;  
 EX:
@@ -126,6 +127,8 @@ addition et assignation : += // Ajoute la valeur de droite à la valeur de la va
 soustraction et assignation : -= // Soustrait la valeur de droite à la valeur de la variable de gauche, puis renvoie la nouvelle valeur de la variable  
 multiplication et assignation : *= // Multiplie la valeur de droite par la valeur de la variable de gauche, puis renvoie la nouvelle valeur de la variable  
 division et assignation : /= // Divise la valeur de la variable de gauche par la valeur de droite, puis renvoie la nouvelle valeur de la variable  
+
+/!\ Il est intéressant de savoir qu'il existe un nombre infini dans Javascript et se note **Infinity**. 
 
 #### 1.2.1.4. Concatenation et conversion des types
 
@@ -151,7 +154,7 @@ second = prompt('Entrez le second chiffre :');
 result = first + second;
 alert(result);
 
-Si on essaye ce code, on remarque qu'il y a un probleme. En effet, le texte de prompt() est recupere sous forme d'une chaine de caracteres, chiffre ou non. Du coup l'operateur + fera une concatenation (meme si on insere des chiffres) !
+Si on essaye ce code, on remarque qu'il y a un probleme. En effet, le texte de prompt() est recupere sous forme d'une chaine de caracteres, chiffre ou non. Du coup l'opérateur + fera une concatenation (meme si on insere des chiffres) !
 
 Il suffit alors de convertir la chaine de caracteres en nombre. Pour cela, on aura besoin de la fonction parseInt ( ) .
 EX:  
@@ -161,15 +164,29 @@ EX:
     alert(typeof number); // Affiche : « number »
     alert(number); // Affiche : « 1337 »
 
+#### 1.2.1.7. Comprendre null, undefined et NaN 
+
+- null // est généralement utilisé pour indiquer l'absence d'une valeur
+- undefined // pas de valeur, peut être utilisé de façon interchangeable avec *null* 
+- NaN // Not a Number (pas un nombre), si il apparait apres une suite d'operations arithmetiques, il y a une couille dans le pâté. 
+
+
+#### 1.2.1.8 Les Booléens 
+
+Les booléens sont basés sur la prise de décisions. 
+Les **valeurs falsy** sont : false, null, undefined, "", 0, NaN. 
+Les **valeurs truthy** sont : tout le reste (y compris le string 0 et false).
+
+
 ### 1.2.2. Structures conditionnelles (les conditions)  
 
-• Base de toute condition: les booleens. La condition est une sorte de test pour verifier qu'une variable contient bien une certaine valeur. Les conditions sont constituees de valeurs a tester et de deux types d'operateurs : un *logique* et un de *comparaison*.
+• Base de toute condition: les booléens. La condition est une sorte de test pour verifier qu'une variable contient bien une certaine valeur. Les conditions sont constituees de valeurs a tester et de deux types d'opérateurs : un *logique* et un de *comparaison*.
 
-#### 1.2.2.1. Operateurs de comparaison
+#### 1.2.2.1. Opérateurs de comparaison
 
-• == : egal a  
+• == : egal a (valeur)
 •  != : different de
-• === : contenu et type egal a  
+• === : contenu ET type egal a  (valeur et nature de la variable)
 • !== : contenu ou type different de
 •  > : superieur a  
 • >= : superieur ou egal a
@@ -181,12 +198,12 @@ Lorsqu'une condition est posee, on dit qu'elle est "verifiee" lorsqu'elle renvoi
 Precision sur le == : une comparaison entre 4 et '4' sera verifiee TRUE car meme contenu.
 Precision sur le === : comparaison entre un 4 et '4' sera non verifiee car pas le meme type.
 
-#### 1.2.2.2. Les operateurs logiques
+#### 1.2.2.2. Les opérateurs logiques
 
 Fonctionnement sur le meme principe qu'une "table de verite" en electronique.
 
 • && : ET (AND) : valeur1 && valeur2
-Cet operateur verifie la confition lorsque toutes les valeurs qui lui sont passees valent TRUE. Si une seule d'entre elles vaut FALSE alors la condition n'est pas verifiee. EX:
+Cet opérateur verifie la confition lorsque toutes les valeurs qui lui sont passees valent TRUE. Si une seule d'entre elles vaut FALSE alors la condition n'est pas verifiee. EX:
     var result = true && true;
     alert(result); // Affiche : « true »
     result = true && false;
@@ -195,7 +212,7 @@ Cet operateur verifie la confition lorsque toutes les valeurs qui lui sont passe
     alert(result); // Affiche : « false »
 
 • || : OU (OR) : valeur1 || valeur2
-Operateur plus "souple" car il renvoie TRUE si une des valeurs soumise contient TRUE, qu'importe les autres valeurs.  
+Opérateur plus "souple" car il renvoie TRUE si une des valeurs soumise contient TRUE, qu'importe les autres valeurs.  
     var result = true || true;
     alert(result); // Affiche : « true »
     result = true || false;
@@ -204,14 +221,14 @@ Operateur plus "souple" car il renvoie TRUE si une des valeurs soumise contient 
     alert(result); // Affiche : « false »
 
 • ! : NON (NOT) : !valeur
-Il se differencie des deux operateurs precedents car il ne prend qu'une seule valeur a la fois. S'il se nomme "NON", c'est que sa fonction est d'inverser la valeur qui lui est passee, ainsi TRUE deviendra FALSE et inversement.  
+Il se differencie des deux opérateurs precedents car il ne prend qu'une seule valeur a la fois. S'il se nomme "NON", c'est que sa fonction est d'inverser la valeur qui lui est passee, ainsi TRUE deviendra FALSE et inversement.  
     var result = false;
     result = !result; // On stocke dans « result » l'inverse de « result »
     alert(result); // Affiche « true » car on voulait l'inverse de « false »
     result = !result;
     alert(result); // Affiche « false » car on a inversé de nouveau « result », (on passe de « true » à « false »)
 
-• Combiner les operateurs :  
+• Combiner les opérateurs :  
 EX:
     var condition1, condition2, result;
     condition1 = 2 > 8; // false
@@ -227,10 +244,10 @@ alert(result); // Affiche « false »
 #### 1.2.2.3. La condition "If Else"
 
 • Structure conditionnelle IF pour dire "SI"
-De parentheses qui contiennent la condition a analyser, ou le booleen qui sera retourne par les operateurs conditionnels.
+De parentheses qui contiennent la condition a analyser, ou le booléen qui sera retourne par les opérateurs conditionnels.
 Accolades permettant de definir la portion de code qui sera executee si la condition se verifie.
 
-Le code s'execute si le booleen recu est TRUE, alors que FALSE empeche l'execution. EX:
+Le code s'execute si le booléen recu est TRUE, alors que FALSE empeche l'execution. EX:
 if (2 < 8 && 8 >= 4) { // Cette condition renvoie « true », le code est donc exécuté
     alert('La condition est bien vérifiée.');
 }
@@ -238,7 +255,7 @@ if (2 > 8 || 8 <= 4) { // Cette condition renvoie « false », le code n'est don
     alert("La condition n'est pas vérifiée mais vous ne le saurez pas vu que ce code ne s'exécute pas.");
 }
 
-• La fonction confirm( ) : permet d'avoir en parametre une chaine de caracteres qui sera affiche a l'ecran et retournera un booleen en fonction de l'action de l'user (execution si OK donc TRUE, non-execution si 'annuler' et donc FALSE).
+• La fonction confirm( ) : permet d'avoir en parametre une chaine de caracteres qui sera affiche a l'ecran et retournera un booléen en fonction de l'action de l'user (execution si OK donc TRUE, non-execution si 'annuler' et donc FALSE).
 Tres pratique a utiliser avec les conditions.  
 EX:  
     if (confirm('Voulez-vous exécuter le code JavaScript de cette page ?')) {
@@ -295,6 +312,21 @@ switch (drawer) {
         alert("Info du jour : le meuble ne contient que 4 tiroirs et, jusqu'à preuve du contraire, les tiroirs négatifs n'existent pas.");
 }
 
+Il est possible de rassembler un ensemble d'instructions, qui seront vérifiées jusqu'à ce que le switch fonctionne (jusque au *break*).
+
+switch (drawer) {
+    case 1:
+    case 2:
+    case 3: 
+        alert('Vous venez d'ouvrir un des 3 premiers tiroirs'); break;
+    case 4: 
+        alert('4e tiroir: ..contient des vêtements : des chemises, des pantalons, etc.'); break;
+        .
+        .
+        .
+')
+
+
 - Le mot cle "switch est suivi de la variable a analyser et une paire d'accolades.
 - Se trouvent dans les accolades tous les cas de figure pour la variable definis par le mot cle "case" suivi de la valeur a prendre en compte et " : ".
 - A chaque fin de "case" on met un "break;" pour casser le switch et eviter l'execution du reste du code.
@@ -304,12 +336,13 @@ switch (drawer) {
 
 #### 1.2.2.5. Les ternaires  
 
-L'operateur (ternaire) conditionnel de JavaScript comporte trois operandes et est a utiliser comme raccourci pour la declaration des instructions If...Else. Il se decompose comme suit :
+L'opérateur (ternaire) conditionnel de JavaScript comporte trois operandes et est a utiliser comme raccourci pour la declaration des instructions If...Else. Il se decompose comme suit :
+    EX: var score = condition ? valeur1 : valeur2 ;
 
-- nom de la variable qui va accueillir le resultat de la ternaire,  
-- la variable qui sera analysee par la ternaire,
-- un " ? " suivi d'une valeur (nombre, texte)
-- " : " suivis d'une deuxieme valeur et enfin le point-virgule marquant la fin de la ligne d'instructions.
+- nom de la variable qui va accueillir le resultat de la ternaire (= score),  
+- la condition qui sera analysee par la ternaire,
+- un " ? " suivi d'une première valeur (if)
+- " : " suivis d'une deuxieme valeur (else) et enfin le point-virgule marquant la fin de la ligne d'instructions.
 => si la variable analysee vaut TRUE alors la valeur retournee par la ternaire est celle apres le " ? "  
 => si elle vaut FALSE alors la valeur retournee sera celle apres les " : "  
 
@@ -322,32 +355,40 @@ alert(startMessage + endMessage);
 
 #### 1.2.2.6. Conditions sur les variables
 
-=> lors d'une structure conditionnelle if/else, la variable est convertie en booleen (TRUE/FALSE)
-=> l'operateur OU / || : en plus de sa fonction principale, il permet de renvoyer la premiere variable possedant une valeur evaluee a TRUE.  
+=> lors d'une structure conditionnelle if/else, la variable est convertie en booléen (TRUE/FALSE)
+=> l'opérateur OU / || : en plus de sa fonction principale, il permet de renvoyer la premiere variable possedant une valeur evaluee a TRUE.  
 
 ### 1.2.3. BOUCLES  
 
-#### 1.2.3.1. L'incrementation
+#### 1.2.3.1. L'incrémentation et la décrementation
 
 Soit :  
     var number = 0;
     number = number + 1;
 
-• L'incrementation permet d'ajouter une unite a un nombre au moyen d'une syntaxe courte :
-number++; ou bien ++number;  pour ajouter 1 (incrementer).
+• L'incrémentation permet d'ajouter une unite a un nombre au moyen d'une syntaxe courte :
+number++; ou bien ++number;  pour ajouter 1 (incrémenter).
 number--; ou bien --number; pour soustraire 1 (decrementer).
 
-/!\ Si on place l'operateur ++ avant la variable, cela incremente la variable (number) et retourne la valeur de number incrementee (c'est a dire 1) :
+/!\ Si on place l'opérateur ++ avant la variable, cela incremente la variable (number) et retourne la valeur de number incrémentée (c'est a dire 1) :
     var number = 0;
     var output = ++number;
     alert(number); // Affiche : « 1 »
     alert(output); // Affiche : « 1 »
 
-/!\ Si on place l'operateur apres la variable a incrementer, l'operation retourne la valeur de number avant qu'elle soit incrementee :
+/!\ Si on place l'opérateur apres la variable a incrémenter, l'operation retourne la valeur de number avant qu'elle soit incrémentée :
     var number = 0;
     var output = number++;
     alert(number); // Affiche : « 1 »
     alert(output); // Affiche : « 0 »
+
+Lorsqu'on fait une opération supplémentaire avec une variable incrémentée, il faut choisir si on l'incrémente 
+- avant // incrémentation avant que le calcul soit fait : 
+        var score = 10  
+        var resultat = ++score * 2 (==> 22)
+- après // incrémentation après que le calcul soit fait 
+        var score = 10  
+        var resultat = score++ * 2 (==> 21)
 
 #### 1.2.3.2. La boucle WHILE
 
@@ -373,6 +414,8 @@ alert(number); // Affiche : « 10 »
 • Ici la variable "proceed" est ce qu'on appelle une __variable temoin__, ou bien une variable de boucle.  
 Tant qu'on incremente, les prenoms s'ajoutent, lorsque la variable "nick" est null, fin de la boucle
 EX:
+
+```js
 var nicks = '',
     nick,
     proceed = true;
@@ -384,17 +427,20 @@ var nicks = '',
         proceed = false; // Aucun prénom n'a été entré, donc on fait en sorte d'invalider la condition
         }
 }
-alert(nicks); // Affiche les prénoms à la suite
+alert(nicks);
+```
+
+ // Affiche les prénoms à la suite
 
 • On peut mettre fin a une boucle avec "break" (apres le Else), le break s'utilise exactement comme dans la structure conditionnelle switch.  
-• L'instruction "continue" peut s'utiliser a la place de "break" pour mettre fin a une iteration. Mais dans ce cas la boucle n'est pas stopee, elle passe a l'iteration suivante.
+• L'instruction **continue** peut s'utiliser a la place de "break" pour mettre fin a une iteration. Mais dans ce cas la boucle n'est pas stopee, elle passe a l'iteration suivante. Très utile pour skip des actions. 
 
 #### 1.2.3.3. La boucle FOR  
 
 • La boucle FOR ressemble beuacoup au fonctionnement de la boucle WHILE, sauf que dans les parantheses on n'a pas seulement une condition mais 3 blocs :
 1 - l'initialisation : on initialise la variable, elle s'execute juste avant que la boucle ne demarre,
 2...- la condition: s'execute avant chaque passage de boucle,
-3 - l'incrementation : utilise pour incrementer une variable a chaque iteration de la boucle. S'utilise apres chaque passage de boucle.
+3 - l'incrementation : utilise pour incrémenter une variable a chaque iteration de la boucle. S'utilise apres chaque passage de boucle.
 
 for (var iter = 0; iter < 4; iter++) {
     alert('Itération n°' + iter);
@@ -532,6 +578,35 @@ Les fonctions peuvent servir a isoler une partie du code, pour eviter qu'il n'af
 
 => Ces fonctions immediatement executees s'appellent les "Immediately-Invoked Function Expression" (IIFE)
 
+#### 1.3.2.2 La fonction *arrow* 
+
+Nous avons vu la façon classique d'invoquer une fonction : 
+
+    function LikeButton () {
+        return (
+            <i className = "fa fa-heart like-button"/>
+        )
+    }
+
+Cette fonction peut être convertie en fonction anonyme :
+
+    const LikeButton = function() {
+        return (
+            <i className = "fa fa-heart like button"/>
+        )
+    } 
+
+Ensuite, la fonction peut être simplifiée en fonction **arrow** 
+
+    const LikeButton = () => {
+        return (
+            <i className="fa fa-heart like-button"/>
+        );
+    }
+
+Si la fonction ne contient qu'une seule et unique expression : 
+    const LikeButton = () => (i className="....");
+
 ## 1.4 Quelques Methodes essentielles  
 
 ### 1.4.1 Maths Object
@@ -552,10 +627,12 @@ EX Syntaxe :
 
 Math.ceil(x) //Returns the value of x rounded up to its nearest integer
 Math.floor(x) //Returns the value of x rounded down to its nearest integer
-Math.max(x, y, z, ...) //Returns the number with the highest value
-Math.min(x, y, z, ...) //Returns the number with the lowest value
-Math.random() //Returns a random number between 0 and 1
-Math.round(x) //Returns the value of x rounded to its nearest integer
+Math.max(x, y, z, ...) // Returns the number with the highest value
+Math.min(x, y, z, ...) // Returns the number with the lowest value
+Math.random() // Returns a random number between 0 and 1 (Interesting in Video games)
+Math.round(x) // Returns the value of x rounded to its nearest integer
+Math.pow(BaseX, ExposantY) // retourne l'exposant de la base
+Math.sqrt() // Fait retourne la racine carrée d'un nombre.
 
 EX:  
     *var nombreAleatoire = Math.floor(Math.random() * range//nbreMax-nbreMin) + restantNbreMax-ou-nbreMin*  
@@ -603,3 +680,19 @@ Methodes :
 - Element.classList.add("") : Ajoute les classes spécifiées.  
 - Element.classList.remove("") : Supprime les classes spécifiées.
 - Element.classList.toggle("") : Si un seul argument est présent : change l'existence d'une classe dans la liste. Si la classe existe, alors la supprime et renvoie *false*, dans le cas inverse, ajoute cette classe et retourne *true*.
+
+
+## 1.6 ES6 
+
+### 1.6.1 Les keywords Let & Const 
+
+EcmaScript 6 ajoute *let* et *const*, qui sont deux nouvelles méthodes de déclarer des variables block-scopés. 
+
+- Let est une variable changeanble. On l'utilise dorénavant à la place de var.
+- Const définit une constance, elle renvoie une erreur si on essaie de la réassigner (mais on peut toujours modifier la data au sein de la variable). Const renvoie un signal d'intention.
+
+        const answer = 42;
+        answer = 43;   // error!
+
+        const numbers = [1, 2, 3];
+        numbers[0] = 'this is fine'; // no error
