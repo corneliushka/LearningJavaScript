@@ -607,9 +607,265 @@ Ensuite, la fonction peut être simplifiée en fonction **arrow**
 Si la fonction ne contient qu'une seule et unique expression : 
     const LikeButton = () => (i className="....");
 
-## 1.4 Quelques Methodes essentielles  
 
-### 1.4.1 Maths Object
+## 1.4 Les tableaux
+
+
+var Sources = { 
+	[OpenClassRoom](https://openclassrooms.com/fr/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1917996-les-objets-et-les-tableaux)
+	[GrafikartParcoursTableau](https://www.grafikart.fr/forum/topics/23348)
+	[GrafikartParcoursObjetJS](https://www.grafikart.fr/forum/topics/26631)	
+	[W3Schools](https://www.w3schools.com/js/js_objects.asp)
+};  
+
+
+Un tableau/array, est une variable qui contient plusieurs valeurs, les *items*. Chaque item est accessible au moyen d'un indice (index) et dont la numerotation commence a partir de 0. 
+
+• Indices : la numerotation des items commence toujours a 0 (il y aura toujours donc un decalage d'une unite). 
+
+• Declarer un tableau: on utilise *var*. Le contenu se trouve entre crochets et chaque valeur est separee par une virgule. Les valeurs sont introduites comme variables simples (il faut des guillemets ou apostrophes pour definir les chaines de caracteres).  EX: 
+var myArray = ['Sebastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'] : 
+alert(myArray[1]); // affiche 'Laurence'
+
+### 1.4.1 Operations sur les tableaux
+
+/!\ Une methode est une fonction interne a un objet. /!\
+/!\ Une propriete est une variable interne a un objet. /!\
+
+- La methode *push()* permet d'ajouter un ou plusieurs items a la fin du tableau. Peut recevoir un nombre illimite de parametres.
+• La methode *unshift()*, permet d'ajouter un ou plusieurs items au debut du tableau (pas frequent mais utile).
+• Les methodes *shift()* et *pop()* retirent respectivement le premier et le dernier element d'un tableau. 
+EX: 
+	var myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+	myArray.shift(); // Retire « Sébastien »
+	myArray.pop(); // Retire « Guillaume »
+	alert(myArray); // Affiche « Laurence,Ludovic,Pauline »
+
+
+
+- Les chaines de caracteres possedent une methode *split()* permettant de decouper un tableau en fonction d'un separateur spécifié. 
+EX: // ici a chaque espace (on peut mettre autre chose), la chaine de caracteres est decoupee en portions a chaque espace et celles-ci sont placees dans un tableau.
+	var cousinsString = 'Pauline Guillaume Clarisse',
+   		cousinsArray = cousinsString.split(' ');
+	alert(cousinsString);
+	alert(cousinsArray);
+
+- L'inverse de *split()*, cad creer une chaine de caracteres depuis un tableau, c'est *join()*. *join* prend un paramètre facultatif, qui sera le séparateur entre les éléments.
+
+
+    EX: // ici une chaine de caracteres sera creee, les valeurs de chaque item seront separees par un tiret. Si rien n'est specifie, tout sera colle. 
+	var cousinsString_2 = cousinsArray.join('-');
+	alert(cousinsString_2);
+    
+
+Soit :
+
+        ```javascript
+        var mesClients = ["Robert", "Alice", "Francis", "Elina", "Alpha"]
+        ```
+
+- Méthode *sort()* pour classer les items par ordre alphabétique.
+        mesClients.sort();
+        ["Alice, "Alpha", "Elina", "Francis", "Robert"]
+
+- Méthode *reverse()* pour trier par ordre alphabétique inverse.
+        mesClients.reverse();
+        ["Robert", "Francis", "Elina", "Alpha", "Alice"]
+
+/!\ Attention car sort/reverse sont sensibles à la casse, poyr y rémédier:
+    - Il faut créer la fonction
+
+        ```javascript 
+        function insensible_a_la_case (a,b) {
+            if(a.toUpperCase() < b.toUpperCase()) return -1;
+            if(a.toUpperCase() > b.toUpprCase()) return 1;
+        } 
+        ```
+
+    - Puis appeller la fonction 
+- 
+        ```javascript
+        mesClients.sort(insenslble_a_la_case)
+        ```
+
+- La méthode *array.includes("string) renvoie true ou false si selon la valeur est présente dans le tableau ou non. 
+
+### 1.4.2 Parcourir un tableau
+
+Très utile si on doit accéder à une liste. Pour chaque élément d'un tableau, on doit l'afficher ou le comparer par exemple. En d'autres termes, lorsqu'il faut répéter une étape pour nombre d'éléments. 
+
+#### 1.4.2.1 For i(n)
+
+• Parcourir avec *for i(n)* , principe simple : faire autant d'iterations qu'il y a d'items dans un tableau. 
+
+EX_1: 
+// on commence par definir la variable de boucle *i*, ensuite on regle la condition pour qu'elle s'execute autant de fois qu'il y a d'items (cad 5).
+	var myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+	for (var i = 0; c = myArray.length; i < c; i++) {
+    	alert(myArray[i]);
+	}
+
+#### 1.4.2.2 For Index in
+
+EX_2: *index in*
+    // nous aurons la variable index qui va itérer automatiquement tout le tableau pour le display des valeurs, dans le rendu souhaité.
+    var mesClients = ["Sara", "Francis, "Robert", "Alpha"];
+    for(var index in mesClients) {
+        console.log(index + " est " + mesClients[index]);
+    }
+    0 est Sara
+    1 est Francis
+    2 est Robert
+    3 est Alpha
+
+#### 1.4.2.3 forEach 
+
+Ce que ForEach fait, c'est d'exécuter la fonction a l'intérieur de la paranthèse dans chaque élément du tableau. 
+
+    var mesClients = ["Sara", "Francis, "Robert", "Alpha"];
+    mesClients.forEach(function(nom)) {
+        console.log("Bonjour " + nom);
+    }
+
+
+#### 1.4.3 l'objet *date*
+
+[l'objet date - Udemy](https://www.udemy.com/cours-javascript/learn/v4/t/lecture/6249858?start=0)
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+EX:
+        var maintenant = new Date();
+        >maintenant // va afficher la date
+
+Il existe d'autres objets dates à allouer à notre variable date : 
+
+
+    maintenant.*getUTCDate()*;
+    maintenant.*getFullYear()*;
+
+Les dates sont de type objet, on peut les comparer et on obtiendra "false" si elles sont différentes. 
+
+    var date1 = new Date(10, 10, 2000);
+    var date2 = new Date(10, 10, 2000);
+
+    date1 == date2; 
+    false
+    date1.getTime() == date2.getTime();
+    true
+
+
+
+
+#### 1.4.4 Cloner un tableau
+
+1) creer son tableau en .js
+2) creer nouvelle variable avec slice() 
+EX:
+	let arrayClone = arrayOriginal.slice(0); //
+
+
+### 1.4.4 Les objets litteraux
+
+Il peut etre pratique d'acceder a un tableau aussi au moyen d'un identifiant. Par exemple dans un tableau de prenoms, l'item appele *sister* pourrait retourner la valeur "Laurence". (pseudo tableau)
+
+	var family = {
+    		self: 'Sébastien',
+    		sister: 'Laurence',
+    		brother: 'Ludovic',
+    		cousin_1: 'Pauline',
+    		cousin_2: 'Guillaume'
+	};
+
+*** 
+
+### 1.4.5 Acces aux items d'un tableau__
+
+La syntaxe d'un objet et l'acces a un objet se presente comme suit : 
+	var myObject = {
+		    item1: 'Texte 1',
+		    item2: 'Texte 2',
+ 		    item3: {
+      			  paraph1: 'debut',
+      			  paraph2: 'milieu',
+     			   paraph3: 'fin'
+   		    }
+	};
+alert(myObject.item3.paraph1); // va afficher 'debut'
+
+OU BIEN
+
+alert(myObject['item2']; // on specifie le nom de la propriete pour connaitre l'indice, utile si l'identifiant est contenu dans une variable. 
+EX:
+	var id = 'item2';
+	alert(myObject[id]);
+
+__Ajout des items dans un tableau__
+
+Il est possible d'ajouter un item en specifiant un identifiant pas encore present. 
+EX: // ici 'index' est ajoute et accessible via l'identifiant *item4* 
+	myObject['item4'] = 'Index'; 
+
+
+
+__Introduction aux objets__
+
+Etant un langage *oriente objet*, cela veut dire que JavaScript dispose d'objets. 
+
+• Un objet est un concept, une idée ou une chose.
+• Un objet possède une structure qui lui permet de pouvoir fonctionner et d'interagir avec d'autres objets. 
+• Le JavaScript met à notre disposition des objets natifs, c'est-à-dire des objets directement utilisables. Vous avez déjà manipulé de tels objets sans le savoir : un nombre, une chaîne de caractères ou même un booléen.
+
+Les objets contiennent 3 choses : 
+
+• Un constructeur; un code qui est execute quand on utilise un nouvel objet. Permet d'effectuer des actions comme definir des variables au sein de l'objet (ex: nombre de caracteres d'une chaine de caracteres). Pour les objets natifs cela est fait automatiquement.
+
+• des proprietes; toute valeur qui va etre placee dans une variable au sein de l'objet ( = variable contenue dans l'objet), elle contient des infos necessaires au fonctionnement de l'objet.
+
+• des methodes; c'est ce qui permet de modifier l'objet. Les methodes sont des fonctions contenues dans l'objet et permettant de realiser des operations sur le contenu de l'objet. Ex: dans le cas d'une chaine de caracteres, une methode pourra permettre de la mettre en majuscules. 
+
+=>  la presence d'un point lors de l'appel d'un objet permet d'acceder aux proprietes et methodes d'un objet. 
+EX: 
+- var myString = 'Ceci est une chaîne de caractères'; // On crée un objet String
+- alert(myString.length); // On affiche le nombre de caractères, au moyen de la propriété « length »
+- alert(myString.toUpperCase()); // On récupère la chaîne en majuscules, avec la méthode toUpperCase()
+
+Les objets natifs  :
+• number : l'objet qui genere des nombres;
+• Boolean : l'objet qui gere les booleens;
+• string: l'objet qui gere les chaines de caracteres.
+• Array : gere les tableaux. 
+
+__Utilisation des objets litteraux__
+
+Utile pour ordonner un code. Dans une fonction, pour faire en sorte que *return* retourne plusieurs variables, il faut les placer dans un tableau et le retourner. Cependant il est plus commode d'utiliser un objet litteral. 
+EX: 
+	function getCoords() {
+    		/* un certain script qu'on mettra ici */
+    		return {
+        		x: 12,
+        		y: 21
+    		};
+	}
+	var coords = getCoords(); // la valeur de la fonction est mise dans une variable, l'acces a x et y est simplifie. 
+	alert(coords.x); // 12
+	alert(coords.y); // 21
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 1.x Quelques Methodes essentielles  
+
+### 1.x.1 Maths Object
 
 L'objet Math est un objet natif dont les méthodes et propriétés permettent l'utilisation de constantes et fonctions mathématiques. Cet objet n'est pas une fonction.
 
@@ -645,7 +901,7 @@ EX:
     Math.round(Math.random())
 
 
-### 1.4.2 [Méthodes de String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) 
+### 1.x.2 [Méthodes de String](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String) 
 
 - maVariable.length ; permet de connaitre le nombre de caractères dans le string assigné à la variable.
 - maVariable.toUpperCase() ; mettre le contenu de la variable (chaine de caracteres) en lettres capitales.
@@ -662,9 +918,9 @@ EX:
 parseFloat // Va parser un string ou valeur et transformer en nombre decimal.  
 parseInt  // Va parser un string ou valeur et transformer en nombre (integer).
 
-## 1.5 Document Object Model  
+## 1.x Document Object Model  
 
-### 1.5.1 Interface DOMTokenList  
+### 1.x.1 Interface DOMTokenList  
 
 [DOMTokenList](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList)
 
@@ -682,9 +938,9 @@ Methodes :
 - Element.classList.toggle("") : Si un seul argument est présent : change l'existence d'une classe dans la liste. Si la classe existe, alors la supprime et renvoie *false*, dans le cas inverse, ajoute cette classe et retourne *true*.
 
 
-## 1.6 ES6 
+## 1.x ES6 
 
-### 1.6.1 Les keywords Let & Const 
+### 1.x.1 Les keywords Let & Const 
 
 EcmaScript 6 ajoute *let* et *const*, qui sont deux nouvelles méthodes de déclarer des variables block-scopés. 
 
