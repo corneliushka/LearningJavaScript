@@ -952,3 +952,10 @@ EcmaScript 6 ajoute *let* et *const*, qui sont deux nouvelles méthodes de décl
 
         const numbers = [1, 2, 3];
         numbers[0] = 'this is fine'; // no error
+
+
+### Console. 
+
+console.log() : 
+console.error() : 
+console.table() : retourne une interface de tableau. 
